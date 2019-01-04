@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using Api.FindAnswer.Controll;
+using System.Web;
 using System.Web.Mvc;
 
 namespace findanswer
@@ -7,6 +8,7 @@ namespace findanswer
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
+           
             filters.Add(new HandleErrorAttribute());
         }
     }

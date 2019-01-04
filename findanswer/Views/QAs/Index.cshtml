@@ -1,0 +1,112 @@
+﻿@model IEnumerable<findanswer.Models.QA>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutForFindanswer.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Q_Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Q_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Answer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Analysis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cat_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Add_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Img_Path)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Flag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.From_Source)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Add_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.For_Exame)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Q_Md5)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Q_Content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Q_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Answer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Analysis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cat_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Add_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Img_Path)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Flag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.From_Source)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Add_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.For_Exame)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Q_Md5)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Question }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Question }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Question })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Staticfile CDN 上的 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <title>@ViewBag.Title </title>
+
+</head>
+
+<body>
+    <div class="navbar navbar-default">
+
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("找答案网", "Default", "FirstPage", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("主页", "Default", "FirstPage")</li>
+                    <li>@Html.ActionLink("关于", "About", "FirstPage")</li>
+                    <li>@Html.ActionLink("联系方式", "Contact", "FirstPage")</li>
+                </ul>
+            </div>
+            <div></div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+
+        <hr />
+        <footer class="text-center">
+            <p>
+                <a target="_blank" href="/about/index.html">关于我们</a><span>
+                    |
+                </span><a target="_blank" href="/about/contact.html">接口开放</a><span>
+                    |
+                </span><a target="_blank" href="/about/copyright.html">网站声明</a><span>
+                    |
+                </span><a target="_blank" href="/about/contact.html">合作共赢</a>
+            </p>
+            <p>&copy; @DateTime.Now.Year - www.findanswer.cn - 找答案网 &nbsp;&nbsp; 苏ICP备14008899号 - <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=14118102000122">苏公网安备 14118102000122号</a></p>
+        </footer>
+    </div>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

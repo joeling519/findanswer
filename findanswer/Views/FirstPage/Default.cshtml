@@ -1,0 +1,69 @@
+﻿@model IEnumerable<findanswer.Models.Cat>
+
+@{
+    Layout = "~/Views/Shared/_LayoutForFindanswer.cshtml";
+
+    ViewBag.Title = "找答案网";
+    var list1 = from n in Model where n.Cat_Level == 1 select n;
+
+}
+
+@*<h1 class="text-center"><img src="~/img/cooltext309595418522703.png" /><strong>@ViewBag.Title</strong></h1>*@
+<h1 class="text-center" style="font-size:50px;font-family :STXingkai"><img src="~/img/cooltext309595418522703.png" /><strong>答案网</strong></h1>
+<h5 class="text-center">@ViewBag.Message</h5>
+
+
+<div style="padding:30px 5px; width:100%;text-align:center;">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <div class="row col-xs-0 col-sm-1 col-md-2 col-lg-3"></div>
+            <div class="input-group  col-xs-12 col-sm-10 col-md-8 col-lg-6">
+                <input type="text" class="text-center form-control" placeholder="请输入关键词" id="inputStr">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">
+                        找答案！
+                    </button>
+                </span>
+            </div>
+            <div class="row col-xs-0 col-sm-1 col-md-2 col-lg-3"></div>
+        </div>
+    </form>
+</div>
+
+
+<div class="container ">
+
+    @foreach (var item in list1)
+    {
+        <div class="row">
+            <div class="col-xs-0 col-sm-1 col-md-1 col-lg-2"></div>
+            <div class="col-xs-12 col-sm-2 col-md-3 col-lg-2 h4">
+                <strong>
+                    @Html.DisplayFor(modelItem => item.Cat_Name)
+                </strong>
+
+            </div>
+
+            @{
+                var list2 = from n in Model where n.Father_Id == item.Cat_Id select n;
+            }
+            <div class="row col-xs-12 col-sm-8 col-md-7 col-lg-6 h4 detail">
+
+                <ul class="list-inline">
+                    @foreach (var item2 in list2)
+                    {
+                        <li>                            
+                            @{
+                                string i = Html.DisplayFor(modelItem => item2.Cat_Name).ToString();                                
+                            }
+                            @Html.ActionLink(i, "ClickList", new { id = item.Cat_Id })
+                        </li>
+                    }
+                </ul>
+            </div>
+            <div class="col-xs-0 col-sm-1 col-md-1 col-lg-2"></div>
+        </div>
+    }
+
+
+</div>
