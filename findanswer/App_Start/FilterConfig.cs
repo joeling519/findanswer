@@ -1,5 +1,4 @@
-﻿//using Api.FindAnswer.Controll;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
 
 namespace findanswer

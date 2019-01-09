@@ -7,6 +7,7 @@ namespace findanswer.Models
 
     public partial class FindAnswerMsSqlModel : DbContext
     {
+        public static string conn = "server=172.26.7.21;database=DB_FindAnswer;user=sa;pwd=Mi123456";
         public FindAnswerMsSqlModel()
             : base("name=FindAnswerMsSqlModel")
         {

@@ -13,7 +13,7 @@ namespace findanswer.Controllers
     public class QAsController : Controller
     {
         //对于web.config中不存放connectstring的处理
-        private FindAnswerMsSqlModel db = new FindAnswerMsSqlModel("server=172.26.7.8;database=DB_FindAnswer;user=sa;pwd=mi123456");
+        private FindAnswerMsSqlModel db = new FindAnswerMsSqlModel(FindAnswerMsSqlModel.conn);
 
         // GET: QAs
         public ActionResult Index()
