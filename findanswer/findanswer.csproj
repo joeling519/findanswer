@@ -229,6 +229,9 @@
     <Content Include="Views\Cats\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutForSearch.cshtml" />
     <Content Include="Views\FirstPage\ClickList.cshtml" />
+    <Content Include="Views\Cats\Index1.cshtml" />
+    <Content Include="Views\Cats\Index2.cshtml" />
+    <Content Include="Views\Cats\Index3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

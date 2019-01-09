@@ -1,0 +1,70 @@
+﻿@model IEnumerable<findanswer.Models.Cat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutForFindanswer.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cat_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Alias_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cat_Level)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cat_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Father_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hot_Flag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cat_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Alias_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cat_Level)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cat_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Father_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hot_Flag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Cat_Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Cat_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Cat_Id })
+        </td>
+    </tr>
+}
+
+</table>

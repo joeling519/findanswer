@@ -20,7 +20,18 @@ namespace findanswer.Controllers
         {
             return View(db.Cat.ToList());
         }
-
+        public ActionResult Index1()
+        {
+            return View(db.Cat.Where(c=>c.Cat_Level==1).ToList());
+        }
+        public ActionResult Index2()
+        {
+            return View(db.Cat.Where(c => c.Cat_Level == 2).ToList());
+        }
+        public ActionResult Index3()
+        {
+            return View(db.Cat.Where(c => c.Cat_Level == 3).ToList());
+        }
         // GET: Cats/Details/5
         public ActionResult Details(int? id)
         {
